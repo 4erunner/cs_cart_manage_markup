@@ -1,0 +1,138 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+
+msgctxt "Addons::name::manage_markup"
+msgid "Manage Markup"
+msgstr "Упраление наценкой"
+
+msgctxt "Addons::description::manage_markup"
+msgid "Setting markup by category (applied only for the import)"
+msgstr "Выставление наценки по категориям (применятся только при импорте)"
+
+msgctxt "Languages::mmu_id"
+msgid "Manage Markup"
+msgstr "Упраление наценкой"
+
+msgctxt "Languages::mmu_id_menu_description"
+msgid "Category with margin"
+msgstr "Категории с наценкой"
+
+msgctxt "Languages::mmu_menu"
+msgid "Manage Markup"
+msgstr "Упраление наценкой"
+
+msgctxt "Languages::price_from"
+msgid "Price from"
+msgstr "Цена от"
+
+msgctxt "Languages::price_to"
+msgid "Price to"
+msgstr "Цена до"
+
+msgctxt "Languages::procent"
+msgid "Procent"
+msgstr "Процент"
+
+msgctxt "Languages::procent_about"
+msgid "margin percentage (does not work if you use regular Margin)"
+msgstr "наценка в процентах (не рабоает если установлена обычная Наценка)"
+
+msgctxt "Languages::margin"
+msgid "Margin"
+msgstr "Наценка"
+
+msgctxt "Languages::margin_about"
+msgid "regular markup (including margin as a Percentage)"
+msgstr "обычна наценка (отключает наценку в Процентах)"
+
+msgctxt "Languages::mmu_add_rule"
+msgid "Add rule"
+msgstr "Добавить правило"
+
+msgctxt "Languages::manage_markup.error.range"
+msgid "Wrong range"
+msgstr "Не верный диапазон"
+
+msgctxt "Languages::manage_markup.error.margin"
+msgid "Wrong margin"
+msgstr "Не верная наценка"
+
+msgctxt "Languages::manage_markup.competitors"
+msgid "Сompetitors"
+msgstr "Конкуренты"
+
+msgctxt "Languages::manage_markup.recommended_price"
+msgid "Recommended price"
+msgstr "Рекомендованния цена"
+
+msgctxt "Languages::manage_markup.recommended_price_priority"
+msgid "With pricing, this price will be a priority"
+msgstr "При ценообразовании данная цена будет приоритетной"
+
+msgctxt "Languages::manage_markup.concurent_category"
+msgid "Use competitors' prices"
+msgstr "Применять цены конкурентов"
+
+msgctxt "Languages::manage_markup.tooltip.concurent_category"
+msgid "For this and child categories will be valid competitors prices"
+msgstr "Для данной и дочерних категорий будут действовать цены конкурентов"
+
+msgctxt "SettingsSections::manage_markup::manage_markup_config"
+msgid "General settings"
+msgstr "Общие настройки"
+
+msgctxt "SettingsOptions::manage_markup::manage_markup_logging_enable"
+msgid "Enable logging"
+msgstr "Включить логирование"
+
+msgctxt "SettingsTooltips::manage_markup::manage_markup_logging_enable"
+msgid "Logs will be added to the catalog: [www]/files/[company_id]/manage_markup/logs/"
+msgstr "Логи будут добавлены в каталог: [www]/files/[company_id]/manage_markup/logs/"
+
+msgctxt "SettingsOptions::manage_markup::manage_markup_round"
+msgid "The fractional part of the price"
+msgstr "Дробная часть цены"
+
+msgctxt "SettingsTooltips::manage_markup::manage_markup_round"
+msgid "How many decimal places to leave the price"
+msgstr "Сколько знаков после запятой оставить в цене"
+
+msgctxt "SettingsOptions::manage_markup::manage_markup_list_price"
+msgid "Change the price of the recommended price"
+msgstr "Заменить цену на рекомендованную цену"
+
+msgctxt "SettingsTooltips::manage_markup::manage_markup_list_price"
+msgid "Replaces the price of the recommended price, resets the value LIST PRICE"
+msgstr "Заменяет цену на рекомендованную цену, обнуляет значение LIST PRICE"
+
+msgctxt "SettingsOptions::manage_markup::manage_markup_filter_price"
+msgid "Filter recommended prices"
+msgstr "Фильтр рекомендованных цен"
+
+msgctxt "SettingsTooltips::manage_markup::manage_markup_filter_price"
+msgid "Do not handle the product if the purchase price is higher than the recommended"
+msgstr "Не обрабатывать товар если рекомендованная цена выше закупочной"
+
+msgctxt "SettingsOptions::manage_markup::manage_markup_disable_filtered"
+msgid "Disable filtered products"
+msgstr "Отключить отфильтрованные продукты"
+
+msgctxt "SettingsOptions::manage_markup::manage_markup_concuren_enable"
+msgid "Use price list competitor pricing"
+msgstr "Использовать прайс-лист конкурента в ценообразовании"
+
+msgctxt "SettingsTooltips::manage_markup::manage_markup_concuren_enable"
+msgid "price competitor will be a priority if they are above the nominal otherwise use standard pricing"
+msgstr "цены конкурента будут приоритетными, если они будут выше номинальной в ином случае используется стандартное ценообразование"
+
+msgctxt "SettingsOptions::manage_markup::manage_markup_concurent_file"
+msgid "Price list competitor"
+msgstr "Прайс-лист конкурента"
+
+msgctxt "SettingsTooltips::manage_markup::manage_markup_concurent_file"
+msgid "the file CSV must have a value in the form of <code of the goods; the price>"
+msgstr "файл CSV должен иметь значения в виде <код товара;цена>"

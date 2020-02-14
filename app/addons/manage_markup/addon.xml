@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>manage_markup</id>
+    <version>1.4.36</version>
+    <default_language>en</default_language>
+    <priority>100</priority>
+    <status>active</status>
+    <settings edition_type="ROOT,ULT:VENDOR">
+        <sections>
+            <section id="manage_markup_config">
+                <items>
+                    <item id="manage_markup_logging_enable">
+                        <type>checkbox</type>
+                    </item>
+                    <item id="manage_markup_round">
+                        <type>selectbox</type>
+                        <variants>
+                            <item id="0">
+                                <name>0</name>
+                            </item>
+                            <item id="2">
+                                <name>2</name>
+                            </item>
+                        </variants>
+                        <default_value>0</default_value>
+                    </item>
+                    <item id="manage_markup_list_price">
+                        <type>checkbox</type>
+                    </item>
+                    <item id="manage_markup_filter_price">
+                        <type>checkbox</type>
+                    </item>
+                    <item id="manage_markup_disable_filtered">
+                        <type>checkbox</type>
+                    </item>
+                    <item id="manage_markup_concuren_enable">
+                        <type>checkbox</type>
+                    </item>
+                    <item id="manage_markup_concurent_file">
+                        <type>file</type>
+                        <default_value></default_value>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+    <queries>
+        <item for="install">
+            CREATE TABLE IF NOT EXISTS `?:manage_markup` (
+                `id` INT NOT NULL AUTO_INCREMENT,
+                `category_path` VARCHAR(255) NOT NULL,
+                `price_from` FLOAT NULL DEFAULT '0',
+                `price_to` FLOAT NULL DEFAULT '0',
+                `procent` FLOAT NULL DEFAULT '0',
+                `margin` FLOAT NULL DEFAULT '0',
+                `status` VARCHAR(2) NULL DEFAULT 'A',
+                PRIMARY KEY (`id`),
+                INDEX `category_path` (`category_path`),
+                INDEX `price_from` (`price_from`),
+                INDEX `price_to` (`price_to`),
+                INDEX `status` (`status`)
+            )
+            ENGINE=MyISAM DEFAULT CHARSET=utf8;
+        </item>
+        <item for="install">
+            CREATE TABLE IF NOT EXISTS `?:manage_markup_backup` LIKE `?:manage_markup`;
+        </item>
+        <item for="install">
+            TRUNCATE `?:manage_markup`;
+        </item>
+        <item for="install">
+            INSERT `?:manage_markup` SELECT * FROM `?:manage_markup_backup`;
+        </item>  
+        <item for="install">
+            ALTER TABLE `?:products`
+                ADD `mm_force_list_price` VARCHAR(1)  NOT NULL DEFAULT 'N';
+        </item>   
+        <item for="uninstall">
+            ALTER TABLE `?:products`
+                DROP `mm_force_list_price`;
+        </item>        
+        <item for="uninstall">
+            CREATE TABLE IF NOT EXISTS `?:manage_markup_backup` LIKE `?:manage_markup`;
+        </item>
+        <item for="uninstall">
+            TRUNCATE `?:manage_markup_backup`;
+        </item>
+        <item for="uninstall">
+            INSERT `?:manage_markup_backup` SELECT * FROM `?:manage_markup`;
+        </item>
+        <item for="uninstall">
+            DROP TABLE IF EXISTS `?:manage_markup`;
+        </item>
+        
+        
+        <item for="install">
+            CREATE TABLE IF NOT EXISTS `?:manage_markup_c_category` (
+                `category_id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
+                `status` VARCHAR(2) NULL DEFAULT 'N',
+                PRIMARY KEY `category_id` (`category_id`),
+                INDEX `status` (`status`)
+            )
+            ENGINE=MyISAM DEFAULT CHARSET=utf8;
+        </item>
+        <item for="install">
+            CREATE TABLE IF NOT EXISTS `?:manage_markup_c_category_backup` LIKE `?:manage_markup_c_category`;
+        </item>
+        <item for="install">
+            TRUNCATE `?:manage_markup_c_category`;
+        </item>
+        <item for="install">
+            INSERT `?:manage_markup_c_category` SELECT * FROM `?:manage_markup_c_category_backup`;
+        </item> 
+        <item for="uninstall">
+            CREATE TABLE IF NOT EXISTS `?:manage_markup_c_category_backup` LIKE `?:manage_markup_c_category`;
+        </item>
+        <item for="uninstall">
+            TRUNCATE `?:manage_markup_c_category_backup`;
+        </item>
+        <item for="uninstall">
+            INSERT `?:manage_markup_c_category_backup` SELECT * FROM `?:manage_markup_c_category`;
+        </item>
+        <item for="uninstall">
+            DROP TABLE IF EXISTS `?:manage_markup_c_category`;
+        </item>
+    </queries>
+</addon>

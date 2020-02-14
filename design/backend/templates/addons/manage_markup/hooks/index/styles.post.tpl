@@ -1,0 +1,1 @@
+{style src="addons/manage_markup/styles.less"}
